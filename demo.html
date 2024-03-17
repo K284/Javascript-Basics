@@ -1,0 +1,81 @@
+<html>
+<body>
+
+<input id = "name" type = text>
+<button id = "click" onclick = "calc()"> Calculate </button>
+<p id = "para">Waiting......</p>
+<h1 id = "hh"></h1>
+<h2 id = "2h"><h2>
+
+<p id = "one"></p>
+<p id = "two"></p>
+<p id = "three"></p>
+<p id = "four"></p>
+<p id = "five"></p>
+<p id = "six"></p>
+<p id = "seven"></p>
+
+<div id = "biv"></div>
+
+<p id = "ech3"></p>
+<button onclick = "getElementById('ech3').innerHTML = Date()"> Time</button>/*ech3 must be in single quotes. If it is in double quotes, you wont get the result*/
+
+<p id = "strin">Hello, how are how you!</p>
+<input id = "charr" type = text>
+<button onclick = "Manip()">Get the position</button>
+<p id = "op"></p>
+
+
+
+<script>
+
+function calc(){
+var x;
+x = document.getElementById("name").value;
+document.getElementById("para").innerHTML= "Hello "+x;
+//document.write("Thanks");
+}
+
+var person = {
+firstname:"Krisha",
+lastname:"R",
+age:20,
+
+fullname: function() {return this.firstname + " " + this.lastname}
+
+};
+document.getElementById("hh").innerHTML = person.fullname()+" is "+person["age"]+" years old";
+
+function add(a,b){return a+b};
+document.getElementById("2h").innerHTML = add(22,11);
+
+var name = "Henry ";
+var name33 = "Calvin";
+function show(){
+var name = "K";
+document.getElementById("one").innerHTML = name;}
+
+document.getElementById("two").innerHTML = name;
+show();
+//document.getElementById("three").innerHTML = name;
+//document.getElementById("three").innerHTML = name.slice(2,7);
+//document.getElementById("three").innerHTML = name.substring(4,8);
+//document.getElementById("three").innerHTML = name.substr(3,6);
+document.getElementById("three").innerHTML = name.replace("r","l");
+document.getElementById("four").innerHTML = name.toUpperCase();
+//document.getElementById("five").innerHTML = name.toLowerCase();
+document.getElementById("five").innerHTML = name.concat(name33);
+document.getElementById("six").innerHTML = name.charAt(4);
+
+function Manip(){
+var str = document.getElementById("strin").innerHTML
+var cha = document.getElementById("charr").value
+document.getElementById("op").innerHTML = str.search(cha);//lastIndexOf, indexOf, if there is no element then search returns -1
+}
+
+
+
+
+</script>
+</body>
+</html>
